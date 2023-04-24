@@ -1,0 +1,68 @@
+Program Eleicao ;
+var
+Votar, TotalVoto1, TotalVoto2, TotalVoto3, TotalVoto4, TotalVotos, Nulo, Branco: Integer;  //Declarar variáveis em inteiro
+Percentual1, Percentual2, Percentual3, Percentual4: Real; //Declarar variáveis em reais
+Begin     
+	Writeln('Vote para seu respectivo candidato');
+	Writeln('1 - Rodrigo');
+	Writeln('2 - Silvio');
+	Writeln('3 - Paulo');
+	Writeln('4 - Mauro');
+	Writeln('5 - Voto Nulo');
+	Writeln('6 - Voto em Branco');
+	Writeln('0 - Finalizar');                           
+	Readln(Votar); //Receber o valor 
+		
+		TotalVoto1 := 0; //Dar valor 0 a variavel, mas quando for executada 1 será somada os votos quando apertados no 1
+		TotalVoto2 := 0; //Dar valor 0 a variavel, mas quando for executada 2 será somada os votos quando apertados no 2
+		TotalVoto3 := 0; //Dar valor 0 a variavel, mas quando for executada 3 será somada os votos quando apertados no 3
+		TotalVoto4 := 0;//Dar valor 0 a variavel, mas quando for executada 4 será somada os votos quando apertados no 4      
+		Nulo := 0; //Dar valor 0 a variavel, mas quando for executada 5 será somada os votos quando apertados no 5
+		Branco := 0; //Dar valor 0 a variavel, mas quando for executada 6 será somada os votos quando apertados no 6
+		  	
+		  	While (Votar <> 0) do //Caso for diferente de 0 ele continua executando
+		  	begin
+		      Case (Votar) of
+					1: TotalVoto1 := TotalVoto1 + 1; //Caso for 1 ele soma sempre + 1    
+					2: TotalVoto2 := TotalVoto2 + 1; //Caso for 2 ele soma sempre + 1    				 
+					3: TotalVoto3 := TotalVoto3 + 1; //Caso for 3 ele soma sempre + 1    				 
+					4: TotalVoto4 := TotalVoto4 + 1; //Caso for 4 ele soma sempre + 1    				 
+					5: Nulo := Nulo + 1;  //Caso for 5 ele soma sempre + 1    
+					6: Branco := Branco + 1; //Caso for 6 ele soma sempre + 1    
+				  end;
+				  
+				  TotalVotos := TotalVoto1 + TotalVoto2 + TotalVoto3 + TotalVoto4; // Soma dos votos
+      
+		      Writeln('Vote para seu respectivo candidato');
+		      Writeln('1 - Rodrigo');
+		      Writeln('2 - Silvio');
+		      Writeln('3 - Paulo');
+		      Writeln('4 - Mauro');
+		      Writeln('5 - Voto Nulo');
+		      Writeln('6 - Voto em Branco');
+		      Writeln('0 - Finalizar');
+		      Readln(Votar);  //Receber o valor 
+		  	end; 
+				
+			Percentual1 := (TotalVoto1 / TotalVotos) * 100;  //Receber o percentual dos votos 1
+   		Percentual2 := (TotalVoto2 / TotalVotos) * 100;  //Receber o percentual dos votos 2
+   		Percentual3 := (TotalVoto3 / TotalVotos) * 100;  //Receber o percentual dos votos 3
+   		Percentual4 := (TotalVoto4 / TotalVotos) * 100;  //Receber o percentual dos votos 4
+		  	
+	Writeln('Total de votos do candidato 1: ', TotalVoto1);	  //Mostra o total de votos 1
+	Writeln('Porcentagem de votos no candidato 1: ', Percentual1 :2:2, '%'); //Mostra o percentual dos votos 1
+	
+	Writeln('Total de votos do candidato 2: ', TotalVoto2); //Mostra o total de votos 2
+	Writeln('Porcentagem de votos no candidato 2: ', Percentual2 :2:2, '%'); //Mostra o percentual dos votos 2  
+	
+	Writeln('Total de votos do candidato 3: ', TotalVoto3); //Mostra o total de votos 3
+	Writeln('Porcentagem de votos no candidato 3: ', Percentual3 :2:2, '%'); //Mostra o percentual dos votos 3 
+	
+	Writeln('Total de votos do candidato 4: ', TotalVoto4); //Mostra o total de votos 4
+	Writeln('Porcentagem de votos no candidato 4: ', Percentual4 :2:2, '%'); //Mostra o percentual dos votos 4
+	Writeln('Nulo: ', Nulo); //Mostra o total de votos nulo
+	Writeln('Branco: ', Branco); //Mostra o total de votos em branco
+	Readkey;
+End.
+
+
